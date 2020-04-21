@@ -90,12 +90,6 @@ augroup vim-go-buffer
 
   autocmd BufEnter,CursorHold <buffer> call go#auto#update_autocmd()
 
-  " Echo the identifier information when completion is done. Useful to see
-  " the signature of a function, etc...
-  if exists('##CompleteDone')
-    autocmd CompleteDone <buffer> call go#auto#complete_done()
-  endif
-
   autocmd BufWritePre <buffer> call go#auto#fmt_autosave()
   autocmd BufWritePost <buffer> call go#auto#metalinter_autosave()
 
